@@ -14,7 +14,7 @@ st.title("Filter FDA Approved Drugs by Lipinski's Rule-of-Five with Streamlit")
 st.markdown("""
 """)
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data()
 def download_dataset():
     """Loads once then cached for subsequent runs"""
     df = pd.read_csv(
@@ -92,9 +92,11 @@ df_result4 = df_result3[df_result3["NumHAcceptors"] < NumHAcceptors_cutoff]
 st.write(df_result4.shape)
 st.write(df_result4)
 
+# st.help(mols2grid.display)
 
 raw_html = mols2grid.display(df_result4,
-                            #subset=["Name", "img"],
-                            subset=["img", "Name", "MW", "LogP", "NumHDonors", "NumHAcceptors"],
-                            mapping={"smiles": "SMILES", "generic_name": "Name"})._repr_html_()
-components.html(raw_html, width=900, height=1100, scrolling=False)
+                            smiles_col = 'smiles',
+                            useSVG =True,
+                            style={"__all__": lambda x: "color: red" if x["cns_drug"] < -5 else ""}
+                           )._repr_html_()
+components.html(raw_html, width=1200, height=1100, scrolling=False)
