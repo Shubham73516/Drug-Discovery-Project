@@ -12,7 +12,21 @@ import deepchem as dc
 import numpy as np
 from deepchem.models import GraphConvModel
 
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://img.freepik.com/free-vector/flat-online-medical-conference-illustration_23-2148901289.jpg?size=626&ext=jpg&ga=GA1.2.488125566.1685639352&semt=location_fest_v1");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 
+add_bg_from_url() 
 
 st.title("Drug Discovery Project")
 
