@@ -19,7 +19,7 @@ def add_bg_from_url():
          .stApp {{
              background-image: url("https://img.freepik.com/free-vector/flat-online-medical-conference-illustration_23-2148901289.jpg?size=626&ext=jpg&ga=GA1.2.488125566.1685639352&semt=location_fest_v1");
              background-attachment: fixed;
-             background-size: 
+             background-size: Cover
          }}
          </style>
          """,
