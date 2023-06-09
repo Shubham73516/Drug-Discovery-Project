@@ -28,7 +28,7 @@ def add_bg_from_url():
 
 add_bg_from_url() 
 
-st.title("Drug Discovery Project")
+st.title("Drug Discovery Project (Toxicity prediction )")
 
 st.markdown("""
 - by BBDU students
